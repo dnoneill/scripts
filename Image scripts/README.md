@@ -4,11 +4,11 @@ This script converts images from one image type to another.
 
 1. Install Pillow Library
 
-	$ pip install pillow
+		$ pip install pillow
 
 2. Run script 
 
-	$ python convert_images.py
+		$ python convert_images.py
 
 3. Enter the filepath to where the images are located
 
@@ -23,11 +23,11 @@ entered in step 3.
 
 1. Install Pillow Library
 
-	$ pip install pillow
+		$ pip install pillow
 
 2. run script
 	
-	$ python image_thumbs.py
+		$ python image_thumbs.py
 
 3. Enter filepath of images to be converted
 
