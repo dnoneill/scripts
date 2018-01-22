@@ -1,11 +1,14 @@
-#written by Niqui O'Neill October 18, 2017
+#!/usr/bin/env python
 #This script allows users to download metadata from LOC digital collections and writes it to a csv named for the collection
 #It allows for users to either download a collection using that collection's URL with collection()
 #Or allows users to search loc.gov with query()
 #get_data() grabs all the results from a search, adds the contents to a list and writes the list to a csv file. 
 #This can easily be dumped to a json file by writing "data" to a json object instead of a csv
-#install requests and unicodecsv before running (pip install requests)(pip install unicodecsv)
+#install requests and unicodecsv before running 
+    #(pip install requests)(pip install unicodecsv)
 #to run $python loc_get_data.py
+__author__      = "Niqui O'Neill"
+
 import requests
 import unicodecsv as csv
 data = []

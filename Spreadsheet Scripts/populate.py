@@ -1,9 +1,11 @@
- #this script has the following assumption built in:
+#!/usr/bin/env python
+#this script has the following assumption built in:
 ####The filename column is in the first column in both spreadsheets.  
 ####If they are not this script will not work.  
-#It also takes out the filename column from the metadata spreadsheet
+#This script takes a metadata spreadsheet and a filelist spreadsheet and combines the filepaths listed with the metadata 
 #This script works in both python3 and python2
 #the output spreadsheet will save to the same place as the script
+__author__      = "Niqui O'Neill"
 
 import csv
 import os

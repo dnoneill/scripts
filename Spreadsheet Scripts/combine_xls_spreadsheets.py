@@ -1,6 +1,7 @@
+#!/usr/bin/env python
 #this file requires the following to be installed: pandas
 #this can be done on a machine with python by executing the following command:
-#sudo pip install pandas
+#pip install pandas
 
 #this script takes in multiple spreadsheets and combines them into one spreadsheet
 #it does this by having the user feed in a filepath of the spreadsheets, from there the script combines them.

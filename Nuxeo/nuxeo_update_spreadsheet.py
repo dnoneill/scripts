@@ -1,9 +1,11 @@
-#Written by Niqui O'Neill
+#!/usr/bin/env python
 #This script requires unicodecsv to be installed
 #This script allows the users to download metadata from nuxeo and place it either in a google spreadsheet or tsv file
 #it also allows for metadata to be downloaded from the collection or item level
 #it also asks if all headers should be downloaded or if the empty items should not be downloaded
 #Nuxeo has to be installed for this script to work
+__author__      = "Niqui O'Neill"
+
 import unicodecsv as csv
 import os
 try:

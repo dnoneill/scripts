@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+#This script allows the url to query Internet Archive via keyword or advanced search and writes the results to a csv file
+#requires pip install requests and pip install unicodecsv
+__author__      = "Niqui O'Neill"
+
 import requests
 import math
 import unicodecsv as csv

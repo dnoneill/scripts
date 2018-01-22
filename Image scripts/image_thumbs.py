@@ -1,10 +1,12 @@
-#Written by Niqui O'Neill
+#!/usr/bin/env python
 #This script requires the pillow library to be downloaded: $pip install pillow
 #This script requires the user to input the filepath of the folder where images are located
 #If the file is in jp(e)g, bmp, png, gif, tif(f) format, a thumbnail for the image will be created in the same format
 #The image dimensions will be 150 high or 150 wide and the other side will be sized automatically to scale
 #The thumbnail files will be written to folder named 'image_thumbs' which will be in the same location as the image_thumbs.py script
 #filename of thumbnails are [original filename]_thumbnail.[original filetype]
+__author__      = "Niqui O'Neill"
+
 import os
 from PIL import Image
 filepath = input("Enter the filepath of image files: ")

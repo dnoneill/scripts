@@ -1,8 +1,10 @@
-#Written by Niqui O'Neill
+#!/usr/bin/env python
 #This script requires the user to input the filepath of where the images are located
 #converts the images of the inputed original type (tif, jpg, png)
 #into the output type. The input and output type need to be the extension (tif vs tiff)
 #It then saves the converted images into a folder named converted_[output_type] located in the image file directory
+#requires PILLOW library; pip install pillow
+__author__      = "Niqui O'Neill"
 
 from PIL import Image
 import os

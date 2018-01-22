@@ -1,5 +1,15 @@
 #!/usr/bin/env python
-# Usage: python alto_ocr_text.py <altofile>
+#This script assumes the following file structure for OCR files:
+#ISSUE/filename
+#   ALTO
+#       filename--0001.xml
+#   OCRmaster
+#       filename--0001.jp2        
+#   Viewing
+#       filename--0001.jp2   
+#   filename-METS.xml
+#This script requires that the OCR text be in an xml file in the ALTO folder. All other folders do not need to exist.
+__author__      = "Niqui O'Neill"
 
 import codecs
 import os
@@ -20,11 +30,11 @@ for file in os.listdir(filepath):
                         tree = ET.parse(data)
                         for lines in tree.iterfind('.//TextLine'):
                             all_text += "\n"
-                            #sys.stdout.write('\n')
                             for line in lines.findall('String'):
                                 text = line.attrib.get('CONTENT') + ' '
                                 all_text += text
-                                #sys.stdout.write(text)
             filename = file.replace(".xml", "")
-            with open("no_formatting/%s.txt"%(filename), 'w') as f:
+            if not os.path.exists('issue_files'):
+                os.makedirs('issue_files')
+            with open("issue_files/%s.txt"%(filename), 'w') as f:
                 f.write(all_text)

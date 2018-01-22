@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+#This script takes an input filetype and counts all files of that type in the inputed filepath and all subfolders in that filepath
+#It will then write the filepath, filetype and total count to a csv file. 
+#The script will continue until 'q' is entered.
+__author__      = "Niqui O'Neill"
+
 import os
 import csv
 import datetime
