@@ -27,7 +27,10 @@ except:
 
 excel_names = []
 excel = os.path.join(filepath, "*.xlsx")
+excel2 = os.path.join(filepath, "*.xls")
 for f in glob.glob(excel):
+    excel_names.append(f)
+for f in glob.glob(excel2):
     excel_names.append(f)
 
 # read files in

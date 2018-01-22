@@ -1,5 +1,6 @@
 |convert_images| image_thumbs |
 |--|--|
+|convert_images takes an input image type and converts those images into a new image type|image_thumbs takes all images in a filepath and creates a thumbnail image for the files.|
 |1. Install Pillow Library| 1. Install Pillow Library|
 |`$ pip install pillow`| `$ pip install pillow`|
 |2. Run script |2. Run script |

@@ -8,23 +8,6 @@ __author__      = "Niqui O'Neill"
 
 import unicodecsv as csv
 import os
-try:
-    filepath = raw_input('Enter Nuxeo File Path: ')
-except:
-    filepath = input('Enter Nuxeo File Path: ')
-try:
-    choice = raw_input('Object Level (ENTER O) or Item Level (ENTER I): ')
-except:
-    choice = input('Object Level (ENTER O) or Item Level (ENTER I): ')
-try:
-    url = raw_input('Enter Google Sheet URL: ')
-except:
-    url = input('Enter Google Sheet URL: ')
-try:
-    all_headers = raw_input('All Headers? (Y/N): ')
-except:
-    all_headers = input('All Headers? (Y/N): ')
-
 from pynux import utils
 
 def get_title(data2, x): #gets title
@@ -774,30 +757,50 @@ def google_item(filepath, url):
     client.import_csv(sheet_id, s)#writes csv file to google sheet
     client.open_by_key(sheet_id).sheet1.update_title("nuxeo_item_%s"%nx.get_metadata(path=filepath)['properties']['dc:title'])
     os.remove("temp.csv") #removes temporary csv
+def main():
+    try:
+        filepath = raw_input('Enter Nuxeo File Path: ')
+    except:
+        filepath = input('Enter Nuxeo File Path: ')
+    try:
+        choice = raw_input('Object Level (ENTER O) or Item Level (ENTER I): ')
+    except:
+        choice = input('Object Level (ENTER O) or Item Level (ENTER I): ')
+    try:
+        url = raw_input('Enter Google Sheet URL: ')
+    except:
+        url = input('Enter Google Sheet URL: ')
+    try:
+        all_headers = raw_input('All Headers? (Y/N): ')
+    except:
+        all_headers = input('All Headers? (Y/N): ')
 
-if 'O' in choice or 'o' in choice:
-    if 'http' in url:
-        try:
-            google_object(filepath, url)
-        except:
-            print("\n*********\nWriting to Google document did not work. Make sure that Google document has been shared with API key email address")
-    else:
-        obj = object_level(filepath)
-        with open(obj['filename'], "wb") as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=obj['fieldnames'], delimiter="\t")
-            writer.writeheader()
-            for row in obj['data']:
-                writer.writerow(row)
-if 'I' in choice or 'i' in choice:
-    if 'http' in url:
-        try:
-            google_item(filepath, url)
-        except:
-            print("\n*********\nWriting to Google document did not work. Make sure that Google document has been shared with API key email address")
-    else:
-        item = item_level(filepath)
-        with open(item['filename'], "wb") as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=item['fieldnames'], delimiter="\t")
-            writer.writeheader()
-            for row in item['data']:
-                writer.writerow(row)
+    if 'O' in choice or 'o' in choice:
+        if 'http' in url:
+            try:
+                google_object(filepath, url)
+            except:
+                print("\n*********\nWriting to Google document did not work. Make sure that Google document has been shared with API key email address")
+        else:
+            obj = object_level(filepath)
+            with open(obj['filename'], "wb") as csvfile:
+                writer = csv.DictWriter(csvfile, fieldnames=obj['fieldnames'], delimiter="\t")
+                writer.writeheader()
+                for row in obj['data']:
+                    writer.writerow(row)
+    if 'I' in choice or 'i' in choice:
+        if 'http' in url:
+            try:
+                google_item(filepath, url)
+            except:
+                print("\n*********\nWriting to Google document did not work. Make sure that Google document has been shared with API key email address")
+        else:
+            item = item_level(filepath)
+            with open(item['filename'], "wb") as csvfile:
+                writer = csv.DictWriter(csvfile, fieldnames=item['fieldnames'], delimiter="\t")
+                writer.writeheader()
+                for row in item['data']:
+                    writer.writerow(row)
+
+if __name__ == "__main__":
+    main()

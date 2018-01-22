@@ -7,7 +7,7 @@
 #the output spreadsheet will save to the same place as the script
 __author__      = "Niqui O'Neill"
 
-import csv
+import unicodecsv as csv
 import os
 
 try:
