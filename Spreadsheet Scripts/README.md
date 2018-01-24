@@ -1,4 +1,4 @@
-|combine_xlsx_spreadsheets| combine_csv_spreadsheets | populate |
+|concat_xlsx_spreadsheets| combine_csv_spreadsheets | populate |
 |--|--|--|
 |concats all xls and xlsx files in a particular folder. Assumes that columns are in same format across files|combines all csv files in a particular folder| takes a files spreadsheet and matches a metadata spreadsheet filepath column|
 |1. Install Pandas requirements| 1. Install unicodecsv| 1. Install unicodecsv|
