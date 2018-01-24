@@ -3,10 +3,12 @@
 This script gets all metadata from Nuxeo. It requires the following instructions from nuxeo_spreadsheet to be followed: https://github.com/ucldc/nuxeo_spreadsheet/wiki;
 
 1. Install requirements
-        $ pip install -r requirements.txt
+                
+                $ pip install -r requirements.txt
 
 2. run script
-        $ python nuxeo_get_metadata.py
+                
+                $ python nuxeo_get_metadata.py
         
 3. Enter the filepath of nuxeo assets (i.e. /asset-library/UCLA/)
 
