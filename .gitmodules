@@ -1,3 +1,4 @@
 [submodule "captiontotranscript"]
 	path = captiontotranscript
 	url = https://github.com/dnoneill/captiontotranscript
+	branch = master
