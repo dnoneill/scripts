@@ -16,3 +16,12 @@ ISSUE/filename
 
 1. Run script
 
+
+# tesseract
+
+This script will OCR a PDF. Run the script and enter the filepath of the PDF. It renders a docx copy of the OCRed text and a PDF copy.
+
+1. python tesseract.py
+2. Enter filepath of PDF
+3. Hit enter
+
